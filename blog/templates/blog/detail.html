@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block title %} {% if blog.title %} {{blog.title }} {% else %} Blog Details {% endif %} {% endblock %}
+
+{% block content %}
+
+
+<a href="{% url 'blog:update-blog' blog.id %}">Update</a>
+<h2>{{blog.title}}</h2>
+<span>{{blog.created}}</span>
+<hr>
+<p>{{blog.description}}</p>
+
+{% endblock %}

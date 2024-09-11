@@ -17,7 +17,17 @@
     {% endblock %}
 </head>
 <body>
-    
+    <header>
+
+        <menu>
+            <!-- <div> -->
+                
+                <li><a href="{% url 'blog:blog-list' %}">Home</a></li>
+                <li><a href="">Profile</a></li>
+                <li><a href="" class="disabled">about</a></li>
+        </menu>
+        <!-- <input type="text"> -->
+    </header>
     {% block content %}
     {% endblock %}
 </body>
