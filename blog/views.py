@@ -1,5 +1,5 @@
 from django.forms import BaseModelForm
-from django.http import HttpResponse
+from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render, redirect
 from django.urls import reverse_lazy
 
@@ -8,7 +8,6 @@ from django.views import generic
 from .models import Blog
 
 class BlogList(generic.ListView):
-
     model = Blog
     template_name = 'blog/list.html'
     context_object_name = 'posts'
@@ -41,3 +40,14 @@ class UpdateBlog(generic.UpdateView):
 
     # def get_success_url(self):
     #     return super().get_success_url()
+
+class DeleteBlog(generic.DeleteView):
+    model = Blog 
+    success_url = reverse_lazy('blog:blog-list')
+
+    # def delete(self, request, *args, **kwargs):
+  
+    #     self.object = self.get_object()
+    #     success_url = self.get_success_url()
+    #     self.object.delete()
+    #     return HttpResponseRedirect(success_url)

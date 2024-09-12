@@ -4,7 +4,8 @@
 {% block content %}
 
 
-<a href="{% url 'blog:update-blog' blog.id %}">Update</a>
+<a  href="{% url 'blog:update-blog' blog.id %}">Update</a>
+<a style="color: red;" href="{% url 'blog:delete-blog' blog.id %}">Delete</a>
 <h2>{{blog.title}}</h2>
 <span>{{blog.created}}</span>
 <hr>
